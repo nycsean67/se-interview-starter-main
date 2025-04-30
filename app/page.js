@@ -7,6 +7,13 @@ import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import ImageGallery from "./components/ImageGallery";
 import DestinationDetail from "./components/DestinationDetail";
+import SpecialOffer from "./components/SpecialOffer";
+import ContentstackLivePreview from "@contentstack/live-preview-utils";
+ContentstackLivePreview.init({
+    stackDetails: {
+        apiKey: "bltc6167f7c82140049",
+    },
+});
 
 export default function Home({ params }) {
   const [entry, setEntry] = useState({});
@@ -38,9 +45,10 @@ export default function Home({ params }) {
  {/*     <DestinationDetail /> */}
 
       {entry.page_content?.map((item, index) => {
-        if (item.hasOwnProperty("special_offer")) {
-          console.log("special_offer", item.special_offer);
-          return <TextBlock key={index} content={item.text_block} />;
+
+        if (item.hasOwnProperty("special_offers")) {
+          console.log("special_offers", item.special_offers);
+          return <SpecialOffer key={index} content={item.special_offers} />;
         }
         if (item.hasOwnProperty("text_block")) {
           return <TextBlock key={index} content={item.text_block} />;

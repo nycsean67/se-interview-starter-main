@@ -24,7 +24,7 @@ return (
     {/* Text content on the right */}
     <div className="space-y-4">
       <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
-      <p className="text-gray-700">{description}</p>
+      <p className="text-gray-700">{description}  </p>
       
       {highlights.length > 0 && (
         <div className="mt-4">

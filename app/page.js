@@ -38,15 +38,23 @@ export default function Home({ params }) {
  {/*     <DestinationDetail /> */}
 
       {entry.page_content?.map((item, index) => {
+        if (item.hasOwnProperty("special_offer")) {
+          console.log("special_offer", item.special_offer);
+          return <TextBlock key={index} content={item.text_block} />;
+        }
         if (item.hasOwnProperty("text_block")) {
           return <TextBlock key={index} content={item.text_block} />;
         }
         if (item.hasOwnProperty("image_gallery")) {
           return <ImageGallery key={index} content={item.image_gallery} />;
         }
+        if (item.hasOwnProperty("destination_detail")) {
+          console.log("destination_detail", item.destination_detail);
+          return <DestinationDetail key={index} content={item.destination_detail} />;
+        }
       })}
 
-      <DestinationDetail />
+    <DestinationDetail />
       <Footer />
     </>
   );

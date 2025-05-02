@@ -43,7 +43,7 @@ export default function Home({ params }) {
       <NavBar />
 
       <Hero content={entry.hero_banner[0]} />
- {/*     <DestinationDetail /> */}
+
 
       {entry.page_content?.map((item, index) => {
 
@@ -62,7 +62,8 @@ export default function Home({ params }) {
         }
       })}
 
-    <DestinationDetail />
+ {/*     <DestinationDetail /> */}
+
       <Footer />
     </>
   );

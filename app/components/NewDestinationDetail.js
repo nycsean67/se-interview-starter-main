@@ -9,17 +9,11 @@ export default function NewDestinationDetail({ content }) {
       {console.log('This log happens during render',content)}
         {/* Image on the left */}
       <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden">
-      {console.log('Looking for the image', content.image.filename)}
-   {/*   <img src={content?.image?.filename} className="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-75"/> */}
-        <Image
-  //        src={content?.image?.filename}
-  //        alt={content?.image?.title}
-          //       src="/paris.jpg"
-          src="/london.jpeg"
-          fill
-          className="object-cover"
-          priority
-        />
+      {console.log('Looking for the image url', content.image.url)}
+     <img src={content?.image?.url} className="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-75"/> 
+     
+
+
        </div>
        {/* Text content on the right */}
        <div className="space-y-4">

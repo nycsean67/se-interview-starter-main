@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import ImageGallery from "./components/ImageGallery";
 import DestinationDetail from "./components/DestinationDetail";
+import NewDestinationDetail from "./components/NewDestinationDetail";
 import SpecialOffer from "./components/SpecialOffer";
 import ContentstackLivePreview from "@contentstack/live-preview-utils";
 ContentstackLivePreview.init({
@@ -47,7 +48,6 @@ export default function Home({ params }) {
       {entry.page_content?.map((item, index) => {
 
         if (item.hasOwnProperty("special_offers")) {
-          console.log("special_offers", item.special_offers);
           return <SpecialOffer key={index} content={item.special_offers} />;
         }
         if (item.hasOwnProperty("text_block")) {
@@ -57,8 +57,8 @@ export default function Home({ params }) {
           return <ImageGallery key={index} content={item.image_gallery} />;
         }
         if (item.hasOwnProperty("destination_detail")) {
-          console.log("destination_detail", item.destination_detail);
-          return <DestinationDetail key={index} content={item.destination_detail} />;
+//          console.log("destination_detail", item.destination_detail);
+         return <NewDestinationDetail key={index} content={item.destination_detail} />;
         }
       })}
 

@@ -5,7 +5,7 @@ export default function NewDestinationDetail({ content }) {
   return (
   
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-4">
       {console.log('This log happens during render',content)}
         {/* Image on the left */}
       <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden">
